@@ -1,4 +1,4 @@
-# egrocery
+# estore
 
 ## Project setup
 ```
