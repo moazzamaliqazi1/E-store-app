@@ -1,17 +1,15 @@
 <template>
   <v-app>
-  
-   
     <v-container fluid>
       <v-row>
         <v-col cols="12">
-          <v-card class="mx-auto rounded-xl " flat>
-            <v-img src="d2.png" max-height="100%" max-width="100%" >
+          <v-card class="mx-auto rounded-xl" flat>
+            <v-img src="d2.png" max-height="100%" max-width="100%">
               <v-card-title class="top ml-10">
-                <h2 class="title1 white--text" >Everyone</h2>
+                <h2 class="title1 white--text">Everyone</h2>
               </v-card-title>
               <v-card-title class="top ml-10 mt-n8">
-                <h2 class="title2 white--text">Loves Shop  </h2>
+                <h2 class="title2 white--text">Loves Shop</h2>
               </v-card-title>
               <v-card-text class="ml-10">
                 <h3 class="black--text">#Free Delivery</h3>
@@ -27,7 +25,6 @@
                       prepend-inner-icon="mdi-magnify"
                       flat
                       rounded
-                      
                       success
                     >
                     </v-text-field>
@@ -64,13 +61,10 @@
           <v-toolbar flat color="transparent">
             <v-toolbar-title class="text-h6">Popular Products</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn rounded color="green"  dark class="px-8">See All</v-btn>
+            <v-btn rounded color="green" dark class="px-8">See All</v-btn>
           </v-toolbar>
           <!-- product component -->
           <Product />
-          <!-- product list for just checking -->
-          <!-- <productList /> -->
-          
         </v-col>
       </v-row>
     </v-container>
@@ -78,10 +72,8 @@
 </template>
 
 <script>
-
 import Category from "../components/Category.vue";
 import Product from "../components/Product.vue";
-// import productList from "../components/productList.vue"
 
 export default {
   name: "Home",
@@ -90,10 +82,8 @@ export default {
   }),
 
   components: {
-    
     Category,
     Product,
-    // productList
   },
 };
 </script>

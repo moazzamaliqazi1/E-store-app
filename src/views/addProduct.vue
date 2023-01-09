@@ -77,7 +77,7 @@
 
           <!-- Right side -->
           <div class="col-lg-4">
-            <!-- Status -->
+            
 
             <!-- Notification settings -->
             <div class="card mb-4">

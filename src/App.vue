@@ -1,14 +1,10 @@
 <template>
-  <!-- <v-app>
-   
+  <div>
+    <!-- ..................... -->
+    <Navbar />
+    <router-view></router-view>
 
-    <v-main> -->
-      <div>
-      <Navbar />
-      <router-view></router-view>
-    </div>
-    <!-- </v-main>
-  </v-app> -->
+  </div>
 </template>
 
 <script>
@@ -17,24 +13,21 @@ export default {
   name: "App",
 
   data: () => ({
-    //
+    
   }),
   components: {
-    Navbar
-    
+    Navbar,
   },
-  created(){
-    
-  const user = JSON.parse(localStorage.getItem("user "));
-  if (!user || !user.token) {
-    this.$router.push({ name: "login" });
-  } 
-
-  }
+  created() {
+    const user = JSON.parse(localStorage.getItem("user "));
+    if (!user || !user.token) {
+      this.$router.push({ name: "login" });
+    }
+  },
 };
 </script>
 <style>
-a{
+a {
   text-decoration: none;
 }
 </style>

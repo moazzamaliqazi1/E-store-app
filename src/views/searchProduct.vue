@@ -1,6 +1,6 @@
 <template>
     <div>
-      
+      <!-- ............................. -->
       <div class="container mb-5">
         <div class="row justify-content-center gap-2" >
           <div
@@ -40,42 +40,7 @@
       </div>
     </div>
   </template>
-<!-- <template>
-  <div>
-    <Navbar />
-    <div class="container  justify-content-center">
-      <figure
-        class="card card-product-grid card-sm"
-        v-for="item in items"
-        :key="item.id"
-      >
-        <a href="#" class="img-wrap" data-abc="true"
-          ><img :src="item.thumbnail"
-        /></a>
-        <figcaption class="info-wrap">
-          <div class="row">
-            <div class="col-md-9">
-              <a href="#" class="title" data-abc="true">{{ item.title }}</a>
-            </div>
-            <div class="col-md-3">
-              <div class="rating text-right">
-                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-            </div>
-          </div>
-        </figcaption>
-        <div class="bottom-wrap">
-            <router-link  :to="{name: 'productDetail' , params: {id:item.id}}">detail</router-link>
-          <div class="price-wrap">
-            <span class="price h5">${{ item.price }}</span> <br />
-            <small class="text-grey">{{ item.description }}</small>
-          </div>
-        </div>
-      </figure>
-    </div>
-  </div>
-</template> -->
+
 
 <script>
 import axios from "axios";

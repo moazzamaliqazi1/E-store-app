@@ -53,7 +53,6 @@ export default {
     return {
       username: "",
       password: "",
-      errorMsg: "",
     };
   },
   methods: {
@@ -67,8 +66,6 @@ export default {
           username: this.username,
 
           password: this.password,
-
-          // expiresInMins: 60, // optional
         }),
       });
 
