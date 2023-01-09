@@ -37,16 +37,22 @@
         </button></router-link
       >
     </form>
-    
+
     <div class="dropdown">
-  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Cart
-  </button>
-  <div  @click="$event.stopPropagation()">
-            <cart/>
-          </div>
+      <button
+        class="btn btn-success dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Cart
+      </button>
+      <div @click="$event.stopPropagation()">
+        <cart />
+      </div>
     </div>
-    
+
     <span class="grey--text" style="margin-right: 10px"
       >Hello, <strong>David</strong></span
     >
@@ -63,23 +69,23 @@
 </template>
 
 <script>
-import cart from './cart.vue'
+import cart from "./cart.vue";
 export default {
-  components:{
-    cart
+  components: {
+    cart,
   },
   data() {
     return {
       query: null,
     };
   },
- 
-  methods:{
-    logout(){
+
+  methods: {
+    logout() {
       localStorage.clear();
       this.$router.push({ path: "/" });
-    }
-  }
+    },
+  },
 };
 </script>
 

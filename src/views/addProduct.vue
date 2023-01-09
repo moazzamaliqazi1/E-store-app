@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <div class="container-fluid">
       <div class="container">
         <!-- Title -->
@@ -77,8 +76,6 @@
 
           <!-- Right side -->
           <div class="col-lg-4">
-            
-
             <!-- Notification settings -->
             <div class="card mb-4">
               <div class="card-body">
@@ -141,11 +138,10 @@
 </template>
 
 <script>
-
 import axios from "axios";
 export default {
   name: "addProduct",
-  
+
   data() {
     return {
       addProduct: {
@@ -200,6 +196,5 @@ export default {
 }
 .price-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  
 }
 </style>

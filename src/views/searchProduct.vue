@@ -1,46 +1,52 @@
 <template>
-    <div>
-      <!-- ............................. -->
-      <div class="container mb-5">
-        <div class="row justify-content-center gap-2" >
-          <div
-            class="card col-3 w-50"
-            v-for="item in items"
-        :key="item.id"
-          >
-            <div class="">
-              <v-img
+  <div>
+    <!-- ............................. -->
+    <div class="container mb-5">
+      <div class="row justify-content-center gap-2">
+        <div class="card col-3 w-50" v-for="item in items" :key="item.id">
+          <div class="">
+            <v-img
               :src="item.thumbnail"
-                max-height="100"
-                max-width="100"
-                contain
-              ></v-img>
-              <div
-                class="d-flex justify-content-between align-items-center mt-3 px-2"
+              max-height="100"
+              max-width="100"
+              contain
+            ></v-img>
+            <div
+              class="d-flex justify-content-between align-items-center mt-3 px-2"
+            >
+              <h4>{{ item.title }}</h4>
+              <span class="heart"><i class="fa fa-heart"></i></span>
+            </div>
+            <div class="mt-2 px-2">
+              <small>{{ item.description }}</small>
+            </div>
+            <div class="px-2">
+              <h5>${{ item.price }}</h5>
+            </div>
+            <div class="mt-2 px-2">
+              <small>Rating : {{ item.rating }}</small>
+            </div>
+            <div class="px-2 mt-3">
+              <button class="btn btn-success px-3">
+                <router-link
+                  :to="{ name: 'productDetail', params: { id: item.id } }"
+                  class="detail-btn"
+                  >Detail</router-link
+                >
+              </button>
+              <button
+                class="btn btn-outline-success px-3"
+                style="margin-left: 10px"
               >
-                <h4>{{  item.title }}</h4>
-                <span class="heart"><i class="fa fa-heart"></i></span>
-              </div>
-              <div class="mt-2 px-2">
-                <small>{{ item.description }}</small>
-              </div>
-              <div class="px-2">
-                <h5>${{ item.price }}</h5>
-              </div>
-              <div class="mt-2 px-2">
-                <small>Rating : {{ item.rating }}</small>
-              </div>
-              <div class="px-2 mt-3">
-                <button class="btn btn-success px-3"> <router-link  :to="{name: 'productDetail' , params: {id:item.id}}" class="detail-btn">Detail</router-link></button>
-                <button class="btn btn-outline-success px-3" style="margin-left: 10px;" >Add to cart</button>
-              </div>
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </template>
-
+  </div>
+</template>
 
 <script>
 import axios from "axios";
@@ -59,18 +65,14 @@ export default {
     this.query = this.$route.params.search;
     // check te params
     // console.log(this.query);
-    
   },
-  mounted(){
-    this.$watch(
-        ()=>{
-            this.query = this.$route.params.search;
-            this.getData();
-        }
-    )
+  mounted() {
+    this.$watch(() => {
+      this.query = this.$route.params.search;
+      this.getData();
+    });
   },
 
-  
   methods: {
     async getData() {
       await axios
@@ -88,7 +90,6 @@ export default {
 </script>
 
 <style>
-
 .card-product-list,
 .card-product-grid {
   margin-bottom: 0;
@@ -204,10 +205,10 @@ export default {
 .fa {
   color: #ff5722;
 }
-.detail-btn{
-    color: white;
+.detail-btn {
+  color: white;
 }
-.detail-btn:hover{
-    color: white;
+.detail-btn:hover {
+  color: white;
 }
 </style>
