@@ -20,6 +20,10 @@
         <span>total: $20</span>
         <a href="#">clear cart</a>
       </div>
+      <div class="d-flex justify-content-between">
+        <span>total: $20</span>
+        <a href="#">clear cart</a>
+      </div>
     </div>
   </div>
 </template>
