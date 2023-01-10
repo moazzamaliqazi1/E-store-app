@@ -7,7 +7,11 @@
       :key="product.id"
       :product="product"
     >
-      <v-card class=" rounded-xl d-flex flex-column justify-content-center" max-width="300" style="height:300px;" >
+      <v-card
+        class="rounded-xl d-flex flex-column justify-content-center"
+        max-width="300"
+        style="height: 300px"
+      >
         <div align="center" justify="center">
           <v-img
             :src="product.thumbnail"
@@ -23,12 +27,10 @@
             >{{ product.title }}</router-link
           ></v-card-title
         >
-        <v-card-title class="gery--text caption mt-n6" style="height:90px">{{
+        <v-card-title class="gery--text caption mt-n6" style="height: 90px">{{
           product.description
         }}</v-card-title>
         <v-card-title class="mt-n4">${{ product.price }}</v-card-title>
-        
-        
       </v-card>
     </v-col>
   </v-row>

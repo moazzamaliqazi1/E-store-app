@@ -1,5 +1,5 @@
 <template>
-  <v-item-group  class="">
+  <v-item-group  class="mt-n15">
     
     <v-container>
       <v-row justify="center" class="space">
@@ -20,8 +20,8 @@
               @click="toggle"
             >
               <v-row>
-                <router-link :to="{name:'category' , params:{cat:category}}">
-                <v-col cols="12" sm="12" class="hover-back" >
+                <router-link :to="{name:'category' , params:{cat:category}}" class="text-decoration-none">
+                <v-col cols="12" sm="12" class="hover-back " >
                   <v-list-item  class="text-center ">
                     
                     

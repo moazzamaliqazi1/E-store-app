@@ -2,34 +2,47 @@
   <div>
     <div
       class="dropdown-menu p-2"
-      style="min-width: 320px; right: 0; left: auto"
+      style="
+        min-width: 350px;
+        right: 0;
+        left: auto;
+        overflow: scroll;
+        height: 519px;
+      "
       aria-labelledby="dropdownMenuButton1"
     >
-      <div>
-        <div class="px-2 d-flex justify-content-between">
+    <h4 class="text-center mb-4">My Cart</h4>
+      <div v-for="item in carts" :key="item.id">
+        <div class="ml-5 d-flex justify-content-between">
           <div>
-            <strong>product title</strong>
-            <br />1 x $23
+            <strong> {{ item.title }}</strong>
+            <br />Quantity: {{ item.quantity }} <br />Price: {{ item.price }}
           </div>
-          <div>
-            <a href="#" class="badge badge-secondary">Remove</a>
+          <div >
+            <a href="#" class="text-decoration-none text-danger"><i class="fa-solid fa-xmark"></i></a>
           </div>
         </div>
+        <hr />
       </div>
-      <div class="d-flex justify-content-between">
-        <span>total: $20</span>
-        <a href="#">clear cart</a>
-      </div>
-      <div class="d-flex justify-content-between">
-        <span>total: $20</span>
-        <a href="#">clear cart</a>
-      </div>
+      
+      
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    this.$store.dispatch("getcarts");
+  },
+
+  computed: {
+    carts() {
+      
+      return this.$store.state.carts.products;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

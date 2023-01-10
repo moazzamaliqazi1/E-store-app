@@ -7,6 +7,13 @@ export const getProducts = ({commit}) => {
     })
 }
 
+export const getcarts = ({commit}) =>{
+    axios.get('https://dummyjson.com/carts/1')
+    .then(response =>{
+        commit('SET_CARTS', response.data)
+    })
+}
+
 export const getCategories = ({commit}) => {
     axios.get('https://dummyjson.com/products/categories')
     .then(response =>{
@@ -21,3 +28,4 @@ export const getProduct = ({commit}, productId) =>{
         commit('SET_PRODUCT', response.data)
     })
 }
+

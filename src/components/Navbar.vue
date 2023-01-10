@@ -38,7 +38,7 @@
       >
     </form>
 
-    <div class="dropdown">
+    <div class="dropdown me-2">
       <button
         class="btn btn-success dropdown-toggle"
         type="button"
@@ -46,9 +46,9 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Cart
+       <i><i class="fa-solid fa-cart-shopping"></i></i>
       </button>
-      <div @click="$event.stopPropagation()">
+      <div @click="$event.stopPropagation()" >
         <cart />
       </div>
     </div>

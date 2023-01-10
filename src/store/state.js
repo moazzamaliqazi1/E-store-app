@@ -1,5 +1,8 @@
 export default {
     products:[],
     product: null,
-    categories:[]
+    categories:[],
+    carts:{
+        products:[]
+    }
 }

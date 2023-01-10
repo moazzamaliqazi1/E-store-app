@@ -16,7 +16,7 @@
               </v-card-text>
               <v-card-text class="ml-10">
                 <v-row class="mt-2">
-                  <v-col cols="3">
+                  <v-col cols="4">
                     <v-text-field
                       label="Search "
                       class="d-none d-sm-none d-md-flex"
@@ -43,7 +43,7 @@
               </v-card-text>
             </v-img>
           </v-card>
-          <v-toolbar flat color="transparent">
+          <v-toolbar flat color="transparent" >
             <v-toolbar-title class="text-h6">Category</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn-toggle v-model="toggle_exclusive" group color="#49d9a0">
@@ -56,9 +56,10 @@
             </v-btn-toggle>
           </v-toolbar>
           <!-- category component -->
+
           <category />
 
-          <v-toolbar flat color="transparent">
+          <v-toolbar flat color="transparent" >
             <v-toolbar-title class="text-h6">Popular Products</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn rounded color="green" dark class="px-8">See All</v-btn>

@@ -3,17 +3,14 @@
     <div class="container-fluid">
       <div class="container">
         <!-- Title -->
-        <div
-          class="d-flex justify-content-between align-items-lg-center py-3 flex-column flex-lg-row mt-5"
-        >
-          <h2 class="h5 mb-lg-0">Create a new Product</h2>
-        </div>
+        
 
         <!-- Main content -->
         <div class="row">
-          <div class="col-lg-8">
-            <div class="card mb-4 w-100">
-              <div class="card-body">
+          <div class="col-lg-12">
+            <div class="card  w-100 h-100">
+              <div class="card-body mt-2">
+                <h3 class="text-center">Add Your Product</h3>
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="mb-3">
@@ -65,7 +62,7 @@
                 </div>
                 <button
                   type="button"
-                  class="btn btn-success"
+                  class="btn btn-success mt-5"
                   v-on:click.prevent="addNewProduct"
                 >
                   Add new product
@@ -74,63 +71,7 @@
             </div>
           </div>
 
-          <!-- Right side -->
-          <div class="col-lg-4">
-            <!-- Notification settings -->
-            <div class="card mb-4">
-              <div class="card-body">
-                <h3 class="h6">Notification Settings</h3>
-                <ul class="list-group list-group-flush mx-n2">
-                  <li
-                    class="list-group-item px-0 d-flex justify-content-between align-items-start"
-                  >
-                    <div class="ms-2 me-auto">
-                      <h6 class="mb-0">News and updates</h6>
-                      <small>News about product and feature updates.</small>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                      />
-                    </div>
-                  </li>
-                  <li
-                    class="list-group-item px-0 d-flex justify-content-between align-items-start"
-                  >
-                    <div class="ms-2 me-auto">
-                      <h6 class="mb-0">Tips and tutorials</h6>
-                      <small>Tips on getting more out of the platform.</small>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                        checked=""
-                      />
-                    </div>
-                  </li>
-                  <li
-                    class="list-group-item px-0 d-flex justify-content-between align-items-start"
-                  >
-                    <div class="ms-2 me-auto">
-                      <h6 class="mb-0">User Research</h6>
-                      <small>Get involved in our beta testing program.</small>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                      />
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </div>
     </div>
