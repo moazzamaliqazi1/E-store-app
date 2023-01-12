@@ -33,21 +33,54 @@
         <v-card-title class="mt-n4">${{ product.price }}</v-card-title>
       </v-card>
     </v-col>
+    <!-- ................pagination -->
+    <pagination
+      :totalPages="12"
+      :perPage="10"
+      :currentPage="currentPage"
+      @pagechanged="onPageChange"
+    />
   </v-row>
 </template>
 
 <script>
+import pagination from "../components/pagination.vue";
 export default {
+  components:{
+    pagination
+  },
+  data () {
+    return {
+      currentPage: 1,
+      limit:9,
+      skip:0
+    };
+  },
+  methods: {
+    // pagination function
+    onPageChange(page) {
+      this.currentPage = page;
+      if(page){
+        this.skip= this.limit*(page-1)
+        this.$store.dispatch("getProducts",[this.limit,this.skip]);
+      }
+      
+      
+    }
+  },
   props: ["product"],
+  //show all productsusing props
 
   computed: {
+    //get all products from store
     products() {
       return this.$store.state.products;
     },
   },
 
   mounted() {
-    this.$store.dispatch("getProducts");
+    // dispatch an action for get the products
+    this.$store.dispatch("getProducts",[this.limit,this.skip]);
   },
 };
 </script>

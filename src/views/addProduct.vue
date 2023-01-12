@@ -2,13 +2,10 @@
   <div>
     <div class="container-fluid">
       <div class="container">
-        <!-- Title -->
-        
-
         <!-- Main content -->
         <div class="row">
           <div class="col-lg-12">
-            <div class="card  w-100 h-100">
+            <div class="card w-100 h-100">
               <div class="card-body mt-2">
                 <h3 class="text-center">Add Your Product</h3>
                 <div class="row">
@@ -70,8 +67,6 @@
               </div>
             </div>
           </div>
-
-         
         </div>
       </div>
     </div>
@@ -94,9 +89,11 @@ export default {
     };
   },
   methods: {
+    //add the new product for sale 
     async addNewProduct() {
       console.log(this.addProduct);
       const result = await axios.post("https://dummyjson.com/products/add", {
+        //push all the values in api its just dummy api we'll get just response 
         pTitle: this.addProduct.pTitle,
         pDesc: this.addProduct.pDesc,
         pPrice: this.addProduct.pPrice,
@@ -104,8 +101,8 @@ export default {
       });
       if (result.status == 200) {
         console.log("result", result);
-
-        this.$router.push({ name: "home" });
+        this.$swal.fire("success!", "product added ", "success");
+        // this.$router.push({ name: "home" });
       }
     },
   },

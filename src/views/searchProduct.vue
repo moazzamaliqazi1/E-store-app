@@ -67,6 +67,7 @@ export default {
     // console.log(this.query);
   },
   mounted() {
+    //without refreshing searching can done again and again
     this.$watch(() => {
       this.query = this.$route.params.search;
       this.getData();
@@ -76,6 +77,7 @@ export default {
   methods: {
     async getData() {
       await axios
+      //query variable passes here with search value by params and put it in api for searching
         .get(`https://dummyjson.com/products/search?q=${this.query}`)
         .then((response) => {
           this.items = response.data.products;

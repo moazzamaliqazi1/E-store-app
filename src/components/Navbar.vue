@@ -46,9 +46,10 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-       <i><i class="fa-solid fa-cart-shopping"></i></i>
+        <i><i class="fa-solid fa-cart-shopping"></i></i>
       </button>
-      <div @click="$event.stopPropagation()" >
+      <div @click="$event.stopPropagation()">
+        <!-- here cart component where all cart placed it`s a dropdown -->
         <cart />
       </div>
     </div>
@@ -81,6 +82,7 @@ export default {
   },
 
   methods: {
+    //logout functionality
     logout() {
       localStorage.clear();
       this.$router.push({ path: "/" });

@@ -1,8 +1,6 @@
 export default {
-    products:[],
-    product: null,
-    categories:[],
-    carts:{
-        products:[]
-    }
-}
+  products: [], //all products
+  product: null, //single product
+  categories: [], //all categories
+  carts: [],//all user  cart
+};

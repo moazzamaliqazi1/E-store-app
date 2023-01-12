@@ -11,35 +11,31 @@
       "
       aria-labelledby="dropdownMenuButton1"
     >
-    <h4 class="text-center mb-4">My Cart</h4>
+      <h4 class="text-center mb-4">My Cart</h4>
       <div v-for="item in carts" :key="item.id">
         <div class="ml-5 d-flex justify-content-between">
           <div>
             <strong> {{ item.title }}</strong>
             <br />Quantity: {{ item.quantity }} <br />Price: {{ item.price }}
           </div>
-          <div >
-            <a href="#" class="text-decoration-none text-danger"><i class="fa-solid fa-xmark"></i></a>
+          <div>
+            <a href="#" class="text-decoration-none text-danger"
+              ><i class="fa-solid fa-xmark"></i
+            ></a>
           </div>
         </div>
         <hr />
       </div>
-      
-      
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    this.$store.dispatch("getcarts");
-  },
-
   computed: {
+    //get all carts from store
     carts() {
-      
-      return this.$store.state.carts.products;
+      return this.$store.state.carts;
     },
   },
 };

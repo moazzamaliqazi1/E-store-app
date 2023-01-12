@@ -4,7 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import productDetail from '../views/productDetail.vue'
 import addProduct from '../views/addProduct.vue'
 import loginPage from '../views/loginPage.vue'
-import category from '../views/category.vue'
+import categoryPage from '../views/categoryPage.vue'
 import searchProduct from '../views/searchProduct.vue'
 
 Vue.use(VueRouter)
@@ -31,9 +31,9 @@ const routes = [
     component: addProduct
   },
   {
-    path: '/category/:cat',
-    name: 'category',
-    component: category
+    path: '/categoryPage/:cat',
+    name: 'categoryPage',
+    component: categoryPage
   },
   {
     path: '/productDetail/:id',

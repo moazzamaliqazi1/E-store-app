@@ -3,6 +3,7 @@
     <v-container fluid>
       <v-row>
         <v-col cols="12">
+          <!-- homepage banner/image -->
           <v-card class="mx-auto rounded-xl" flat>
             <v-img src="d2.png" max-height="100%" max-width="100%">
               <v-card-title class="top ml-10">
@@ -43,7 +44,9 @@
               </v-card-text>
             </v-img>
           </v-card>
-          <v-toolbar flat color="transparent" >
+
+          <!-- ......................... -->
+          <v-toolbar flat color="transparent">
             <v-toolbar-title class="text-h6">Category</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn-toggle v-model="toggle_exclusive" group color="#49d9a0">
@@ -57,9 +60,9 @@
           </v-toolbar>
           <!-- category component -->
 
-          <category />
+          <Category />
 
-          <v-toolbar flat color="transparent" >
+          <v-toolbar flat color="transparent">
             <v-toolbar-title class="text-h6">Popular Products</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn rounded color="green" dark class="px-8">See All</v-btn>

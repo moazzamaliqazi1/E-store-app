@@ -1,24 +1,15 @@
+// bring  all products and set in state
 export const SET_PRODUCTS = (state,products) => {
     state.products = products;
 }
-
-export const SET_CARTS = (state , carts) => {
-
-    state.carts.products = carts.products
-    console.log(state.carts.products)
-}
-
+//set categories in state
 export const SET_CATEGORIES = (state,categories) => {
     state.categories = categories;
 }
-
+//set single product in state
 export const SET_PRODUCT = (state,product) => {
     state.product = product;
 }
-
-export const ADD_TO_CART = (state , {product , quantity}) => {
-    state.cart.push({
-        product,
-        quantity
-    })
+export const UPDATE_CART = (state, carts)=>{
+    state.carts =  carts; // here cart is new cart
 }

@@ -1,8 +1,7 @@
 <template>
   <div>
-    
     <div class="container mb-5">
-      <div class="row justify-content-center gap-2" >
+      <div class="row justify-content-center gap-2">
         <div
           class="card col-3 w-50"
           v-for="product in category.products"
@@ -31,8 +30,13 @@
               <small>Rating : {{ product.rating }}</small>
             </div>
             <div class="px-2 mt-3">
-                <button class="btn btn-success px-3"> <router-link  :to="{name: 'productDetail' , params: {id:product.id}}" class="detail-btn">Detail</router-link></button>
-              <button class="btn btn-outline-success px-3" style="margin-left: 10px;" >Add to cart</button>
+              <button class="btn btn-success px-3">
+                <router-link
+                  :to="{ name: 'productDetail', params: { id: product.id } }"
+                  class="detail-btn"
+                  >Detail</router-link
+                >
+              </button>
             </div>
           </div>
         </div>
@@ -44,10 +48,9 @@
 <script>
 import axios from "axios";
 
-
 export default {
-  name: "category",
- 
+  name: "categoryPage",
+
   data() {
     return {
       category: {
@@ -58,10 +61,12 @@ export default {
   },
 
   mounted() {
+    //call function when page load
     this.getCategory();
   },
   methods: {
     async getCategory() {
+      //get product of categories
       await axios
         .get(`https://dummyjson.com/products/category/${this.cat}`)
         .then((response) => {
@@ -77,12 +82,11 @@ export default {
 </script>
 
 <style>
-.container{
-    margin-top: 60px!important;
+.container {
+  margin-top: 60px !important;
 }
 .card {
   width: 255px;
-  
 }
 
 .inner-card {
@@ -110,10 +114,10 @@ export default {
   border-color: #0257d5;
   box-shadow: none;
 }
-.detail-btn{
-    color: white;
+.detail-btn {
+  color: white;
 }
-.detail-btn:hover{
-    color: white;
+.detail-btn:hover {
+  color: white;
 }
 </style>

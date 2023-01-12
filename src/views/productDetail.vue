@@ -27,13 +27,24 @@
             <div class="mt-2 px-2">
               <small>Rating : {{ product.rating }}</small>
             </div>
-            <div class="px-2 mt-3">
-              <button
-                class="btn btn-success px-3"
-                style="background-color: #41ab55"
-              >
-                Add to cart
-              </button>
+            <div class="d-flex flex-row justify-content-between">
+              <div class="input-group col-md-3 col-4 p-0">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Quantity</span>
+                </div>
+                <input type="number" class="form-control" v-model="quantity" />
+              </div>
+              <div class="input-group col-md-3 col-4 p-0">
+                <button
+                  class="btn btn-success"
+                  style="background-color: #41ab55"
+                  @click="addToCart(product)"
+                >
+                 
+                    Add to cart
+                  
+                </button>
+              </div>
             </div>
             <h6 class="px-2 mt-3">Related Images</h6>
             <div class="d-flex">
@@ -67,15 +78,32 @@
 </template>
 
 <script>
+
+
 export default {
+  data() {
+    return {
+      quantity: 1,
+      
+    };
+  },
   props: ["id"],
+  methods: {
+    addToCart(productData){
+      // dispatch all data of product 
+       this.$store.dispatch("addToCart",productData)
+       this.$swal.fire("success!", "Product added", "success");
+    }
+  },
 
   computed: {
     product() {
+      //get detail of product
       return this.$store.state.product;
     },
   },
   mounted() {
+    //dispatch action for single product 
     this.$store.dispatch("getProduct", this.id);
   },
 };

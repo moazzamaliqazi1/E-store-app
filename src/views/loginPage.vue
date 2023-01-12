@@ -15,6 +15,7 @@
           />
           <form class="form-signin">
             <input
+            
               type="text"
               class="form-control"
               placeholder="Email"
@@ -47,7 +48,10 @@
 export default {
   name: "loginPage",
   mounted() {
+    // when page load check user
     this.onLoad();
+   
+    
   },
   data() {
     return {
@@ -74,6 +78,7 @@ export default {
       console.log(data.username, data.password);
 
       if (response.ok) {
+        //save use in localstorage
         localStorage.setItem("user", JSON.stringify(data));
         this.$router.push({ name: "homePage" });
 
@@ -84,11 +89,13 @@ export default {
       }
     },
     onLoad() {
+      // check user in localstorage
       const user = JSON.parse(localStorage.getItem("user"));
       if (user && user.token) {
         this.$router.push({ name: "home" });
       }
     },
+    
   },
 };
 </script>
