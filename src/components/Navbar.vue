@@ -19,7 +19,7 @@
       >
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <form class="d-flex">
+    <form class="search-form d-flex">
       <input
         style="margin-right: 10px; width: 300px"
         class="form-control mr-2"
@@ -100,5 +100,10 @@ export default {
 }
 .link-color:hover {
   border-bottom: 1px solid green;
+}
+@media only screen and (max-width: 414px) {
+ .search-form{
+  display: none;
+ }
 }
 </style>

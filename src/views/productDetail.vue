@@ -32,7 +32,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">Quantity</span>
                 </div>
-                <input type="number" class="form-control" v-model="quantity" />
+                <input type="number" class="form-control"  v-model="quantity" />
               </div>
               <div class="input-group col-md-3 col-4 p-0">
                 <button
@@ -77,6 +77,8 @@
   </div>
 </template>
 
+
+
 <script>
 
 
@@ -92,7 +94,7 @@ export default {
     addToCart(productData){
       // dispatch all data of product 
        this.$store.dispatch("addToCart",productData)
-       this.$swal.fire("success!", "Product added", "success");
+       this.$swal.fire("success!", "Product added to cart", "success");
     }
   },
 
@@ -109,4 +111,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style ></style>

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-container fluid>
+    <v-container>
       <v-row>
         <v-col cols="12">
           <!-- homepage banner/image -->
@@ -32,7 +32,7 @@
                   </v-col>
                   <v-col cols="2" class="marginLeft">
                     <v-btn
-                      color="green"
+                      color="#157347"
                       rounded
                       dark
                       x-large
@@ -46,38 +46,30 @@
           </v-card>
 
           <!-- ......................... -->
-          <v-toolbar flat color="transparent">
-            <v-toolbar-title class="text-h6">Category</v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-btn-toggle v-model="toggle_exclusive" group color="#49d9a0">
-              <v-btn>
-                <v-icon>mdi-chevron-left</v-icon>
-              </v-btn>
-              <v-btn>
-                <v-icon>mdi-chevron-right</v-icon>
-              </v-btn>
-            </v-btn-toggle>
-          </v-toolbar>
           <!-- category component -->
-
-          <Category />
+          <!--remember... transition add end will add  -->
+          <div style="margin-left: 388px" class="mt-5">
+            <allCategories />
+          </div>
 
           <v-toolbar flat color="transparent">
             <v-toolbar-title class="text-h6">Popular Products</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn rounded color="green" dark class="px-8">See All</v-btn>
+            <v-btn rounded color="#157347" dark class="px-8">See All</v-btn>
           </v-toolbar>
           <!-- product component -->
           <Product />
         </v-col>
       </v-row>
     </v-container>
+   
   </v-app>
 </template>
 
 <script>
-import Category from "../components/Category.vue";
 import Product from "../components/Product.vue";
+import allCategories from "../components/allCategories.vue";
+
 
 export default {
   name: "Home",
@@ -86,8 +78,9 @@ export default {
   }),
 
   components: {
-    Category,
     Product,
+    allCategories,
+    
   },
 };
 </script>

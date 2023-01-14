@@ -142,7 +142,8 @@
     border-radius: 5px;
   }
   .pagination-item:hover {
-    background: lightgray;
+    background: #157347;
+    color: white;
   }
   
   .active {

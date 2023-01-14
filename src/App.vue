@@ -1,19 +1,23 @@
 <template>
   <div>
-    <!-- ..................... -->
+    <!-- ....Navbar.... -->
     <Navbar />
     <router-view></router-view>
+     <!-- footer -->
+   <footerComponent />
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import footerComponent from "./components/footerComponent.vue";
 export default {
   name: "App",
 
   data: () => ({}),
   components: {
     Navbar,
+    footerComponent
   },
   //if user is not exist in localstorage system will nevigate to login page
   beforeCreate() {
