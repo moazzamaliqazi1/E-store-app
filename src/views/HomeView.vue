@@ -51,10 +51,10 @@
             </v-img>
           </v-card>
 
-          <!-- ......................... -->
+         
           <!-- category component -->
-          <!--remember... transition add end will add  -->
-          <div style="margin-left: 388px" class="mt-5">
+          
+          <div  class="cat-btn mt-5 d-flex justify-content-center ">
             <allCategories />
           </div>
 
@@ -92,6 +92,9 @@ export default {
 };
 </script>
 <style>
+.cat-btn{
+  
+}
 .marginLeft {
   margin-left: -90px;
 }
@@ -122,6 +125,9 @@ export default {
   }
   .top {
     margin-top: 20px;
+  }
+  .cat-btn{
+    margin-right: 100px;
   }
 }
 @media only screen and (min-width: 600px) {
