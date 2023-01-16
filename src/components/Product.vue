@@ -7,6 +7,10 @@
       :key="product.id"
       :product="product"
     >
+    <router-link
+            :to="{ name: 'productDetail', params: { id: product.id } }"
+            style="color: black"
+            >
       <v-card
         class="rounded-xl d-flex flex-column justify-content-center"
         max-width="300"
@@ -21,17 +25,14 @@
           ></v-img>
         </div>
         <v-card-title
-          ><router-link
-            :to="{ name: 'productDetail', params: { id: product.id } }"
-            style="color: black"
-            >{{ product.title }}</router-link
-          ></v-card-title
+          >{{ product.title }}</v-card-title
         >
         <v-card-title class="gery--text caption mt-n6" style="height: 90px">{{
           product.description
         }}</v-card-title>
         <v-card-title class="mt-n4">${{ product.price }}</v-card-title>
       </v-card>
+    </router-link>
     </v-col>
     <!-- ................pagination -->
     <pagination
