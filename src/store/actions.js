@@ -38,3 +38,9 @@ export const addToCart = ({commit, state},product) =>{
     commit('UPDATE_CART', carts)
 }
 
+//remove product from cart
+export const removeProductFromCart = ({commit},product) => {
+    commit('REMOVE_PRODUCT',product)
+}
+
+

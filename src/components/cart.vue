@@ -19,7 +19,7 @@
             <br />Quantity: {{ item.quantity }} <br />Price: {{ item.price }}
           </div>
           <div>
-            <a href="#" class="text-decoration-none text-danger"
+            <a href="#" class="text-decoration-none text-danger" @click="removeProductFromCart(item.id)"
               ><i class="fa-solid fa-xmark"></i
             ></a>
           </div>
@@ -38,6 +38,11 @@ export default {
       return this.$store.state.carts;
     },
   },
+  methods:{
+    removeProductFromCart(product){
+      this.$store.dispatch("removeProductFromCart", product)
+    }
+  }
 };
 </script>
 

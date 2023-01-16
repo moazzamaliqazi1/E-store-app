@@ -13,7 +13,7 @@
     </button>
 
     <!-- drawer component -->
-    <div
+    <div 
       id="drawer-example"
       class="fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800 transition-transform left-0 top-0 -translate-x-full"
       tabindex="-1"
@@ -64,6 +64,11 @@
 <script>
 export default {
   props: ["category"],
+  data(){
+    return{
+      show:false
+    }
+  },
   computed: {
     categories() {
       // get all categories from store

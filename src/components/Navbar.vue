@@ -1,4 +1,5 @@
 <template>
+  
   <v-app-bar app style="background-color: white">
     <v-badge>
       <v-img src="1.png" width="30"> </v-img>
@@ -19,7 +20,11 @@
       >
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <form class="search-form d-flex">
+    <form class="search-form d-flex" style="@media  screen and (max-width: 414px) {
+ .search-form{
+  display: none !important; 
+ }
+}">
       <input
         style="margin-right: 10px; width: 300px"
         class="form-control mr-2"
@@ -92,6 +97,10 @@ export default {
 </script>
 
 <style>
+	
+
+
+/* ........................... */
 .vtoolbar__title {
   font-size: 1rem !important;
 }
@@ -101,9 +110,9 @@ export default {
 .link-color:hover {
   border-bottom: 1px solid green;
 }
-@media only screen and (max-width: 414px) {
+@media  screen and (min-width: 414px) {
  .search-form{
-  display: none;
+  display: none !important; 
  }
 }
 </style>

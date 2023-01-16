@@ -27,10 +27,15 @@
                       flat
                       rounded
                       success
+                      v-model="query"
                     >
                     </v-text-field>
                   </v-col>
                   <v-col cols="2" class="marginLeft">
+                    <router-link
+        :to="{ name: 'searchproduct', params: { search: query } }"
+        style="margin-right: 10px"
+      >
                     <v-btn
                       color="#157347"
                       rounded
@@ -39,6 +44,7 @@
                       class="py-7 d-none d-sm-none d-md-flex"
                       >search</v-btn
                     >
+                  </router-link>
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -75,6 +81,7 @@ export default {
   name: "Home",
   data: () => ({
     toggle_exclusive: 1,
+    query: null,
   }),
 
   components: {

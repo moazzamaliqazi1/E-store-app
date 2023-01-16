@@ -13,3 +13,9 @@ export const SET_PRODUCT = (state,product) => {
 export const UPDATE_CART = (state, carts)=>{
     state.carts =  carts; // here cart is new cart
 }
+// delete product in cart
+export const REMOVE_PRODUCT = (state,product)=>{
+    state.carts = state.carts.filter(item => {
+        return item.id !== product
+    })
+}
