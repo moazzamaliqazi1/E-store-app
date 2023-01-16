@@ -21,7 +21,7 @@
     <v-spacer></v-spacer>
 
     <v-card-text style="width: 55%" class="responsive">
-      <v-row class="mt-2">
+      <v-row class="mt-4">
         <v-col cols="7">
           <v-text-field
             label="Search "
