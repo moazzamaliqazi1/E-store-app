@@ -20,7 +20,7 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
 
-    <v-card-text style="width: 55%">
+    <v-card-text style="width: 55%" class="responsive">
       <v-row class="mt-2">
         <v-col cols="7">
           <v-text-field
@@ -107,8 +107,8 @@ export default {
 .link-color:hover {
   border-bottom: 1px solid green;
 }
-@media screen and (max-width: 414px) {
-  v-card-text {
+@media screen and (max-width: 450px) {
+  .responsive {
     display: none !important;
   }
 }
