@@ -92,9 +92,7 @@ export default {
 };
 </script>
 <style>
-.cat-btn{
-  
-}
+
 .marginLeft {
   margin-left: -90px;
 }

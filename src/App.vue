@@ -2,9 +2,10 @@
   <div>
     <!-- ....Navbar.... -->
     <Navbar />
-    <router-view></router-view>
-     <!-- footer -->
-   <footerComponent />
+    <!-- below key means don't need refresh again when login  -->
+    <router-view :key="$route.fullPath"></router-view>
+    <!-- footer -->
+    <footerComponent />
   </div>
 </template>
 
@@ -17,12 +18,12 @@ export default {
   data: () => ({}),
   components: {
     Navbar,
-    footerComponent
+    footerComponent,
   },
   //if user is not exist in localstorage system will nevigate to login page
   beforeCreate() {
     const user = JSON.parse(localStorage.getItem("user "));
-    console.log(user)
+    console.log(user);
     if (!user || !user.token) {
       this.$router.push({ name: "login" });
     }

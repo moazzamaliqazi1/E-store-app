@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- ........................ -->
+    <!-- ...........check if product exist then show............. -->
     <div class="container mb-5">
       <div class="row justify-content-center gap-2" v-if="product">
         <div class="card col-3 w-75">

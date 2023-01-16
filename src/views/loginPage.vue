@@ -80,7 +80,7 @@ export default {
       if (response.ok) {
         //save use in localstorage
         localStorage.setItem("user", JSON.stringify(data));
-        this.$router.push({ name: "homePage" });
+        this.$router.push({ path: "/home" });
 
         console.log("successful");
       } else {
@@ -92,7 +92,7 @@ export default {
       // check user in localstorage
       const user = JSON.parse(localStorage.getItem("user"));
       if (user && user.token) {
-        this.$router.push({ name: "home" });
+        this.$router.push({ path: "/home" });
       }
     },
     

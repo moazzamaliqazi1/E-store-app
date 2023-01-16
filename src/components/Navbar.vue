@@ -19,67 +19,34 @@
       >
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <!-- <form
-      class="search-form d-flex"
-      style="
-        @media only screen and (max-width: 414px) {
-          display: none !important;
-        }
-      "
-    >
-      <input
-        style="margin-right: 10px; width: 300px"
-        class="form-control mr-2"
-        type="search"
-        v-model="query"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <router-link
-        :to="{ name: 'searchproduct', params: { search: query } }"
-        style="margin-right: 10px"
-      >
-        <button class="btn btn-outline-success mr-2" type="submit">
-          Search
-        </button></router-link
-      >
-    </form> -->
-     <!-- ........................ -->
-     
-     <v-card-text style="width:50%;">
-                <v-row class="mt-2">
-                  <v-col cols="7">
-                    <v-text-field
-                      label="Search "
-                      style="outline: none;
-                      border: 0;"
-                      filled
-                      solo
-                      prepend-inner-icon="mdi-magnify"
-                      flat
-                      rounded
-                      success
-                      v-model="query"
-                    >
-                    </v-text-field>
-                  </v-col>
-                  <v-col cols="2" class="marginLeft">
-                    <router-link
-        :to="{ name: 'searchproduct', params: { search: query } }"
-        
-      >
-                    <v-btn
-                      color="#157347"
-                      
-                      dark
-                      
-                      class="mt-2 d-none d-sm-none d-md-flex"
-                      >search</v-btn
-                    >
-                  </router-link>
-                  </v-col>
-                </v-row>
-              </v-card-text>
+
+    <v-card-text style="width: 55%">
+      <v-row class="mt-2">
+        <v-col cols="7">
+          <v-text-field
+            label="Search "
+            style="outline: none; border: 0"
+            filled
+            solo
+            prepend-inner-icon="mdi-magnify"
+            flat
+            rounded
+            success
+            v-model="query"
+          >
+          </v-text-field>
+        </v-col>
+        <v-col cols="2" class="marginLeft">
+          <router-link
+            :to="{ name: 'searchproduct', params: { search: query } }"
+          >
+            <v-btn color="#157347" dark class="mt-2 d-none d-sm-none d-md-flex"
+              >search</v-btn
+            >
+          </router-link>
+        </v-col>
+      </v-row>
+    </v-card-text>
 
     <div class="dropdown me-2">
       <button
@@ -96,7 +63,6 @@
       </div>
     </div>
 
-   
     <v-avatar size="30" class="ml-4">
       <v-img
         src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
@@ -142,8 +108,8 @@ export default {
   border-bottom: 1px solid green;
 }
 @media screen and (max-width: 414px) {
-  /* v-app-bar {
+  v-card-text {
     display: none !important;
-  } */
+  }
 }
 </style>
