@@ -207,10 +207,5 @@ export default {
 .fa {
   color: #ff5722;
 }
-.detail-btn {
-  color: white;
-}
-.detail-btn:hover {
-  color: white;
-}
+
 </style>
