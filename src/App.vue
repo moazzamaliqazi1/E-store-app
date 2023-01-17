@@ -20,14 +20,7 @@ export default {
     Navbar,
     footerComponent,
   },
-  //if user is not exist in localstorage system will nevigate to login page
-  beforeCreate() {
-    const user = JSON.parse(localStorage.getItem("user "));
-    console.log(user);
-    if (!user || !user.token) {
-      this.$router.push({ name: "login" });
-    }
-  },
+ 
 };
 </script>
 <style>

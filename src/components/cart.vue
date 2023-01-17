@@ -26,7 +26,11 @@
         </div>
         <hr />
       </div>
+      <div class="btn btn-success" @click="checkUser">
+      Checkout
     </div>
+    </div>
+    
   </div>
 </template>
 
@@ -41,6 +45,16 @@ export default {
   methods:{
     removeProductFromCart(product){
       this.$store.dispatch("removeProductFromCart", product)
+    },
+    checkUser(){
+      const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+    if (!user || !user.token) {
+      this.$router.push({ name: "login" });
+    }
+    else{
+      this.$swal.fire("success!", "checkout done", "success");
+    }
     }
   }
 };

@@ -4,7 +4,7 @@
       <v-img src="1.png" width="30"> </v-img>
     </v-badge>
     <v-toolbar-title class="ml-1">
-      <router-link to="/home" style="text-decoration: none" class="link-color"
+      <router-link to="/" style="text-decoration: none" class="link-color"
         ><span class="green--text">e</span><strong>Store</strong></router-link
       >
     </v-toolbar-title>
@@ -69,8 +69,8 @@
       ></v-img>
     </v-avatar>
 
-    <v-btn icon @click.prevent="logout">
-      <v-icon x-small color="#41ab55">fa fa-sign-out</v-icon>
+    <v-btn icon><router-link to="/login">
+      <v-icon x-small color="#41ab55">fa fa-sign-out</v-icon></router-link>
     </v-btn>
   </v-app-bar>
 </template>
@@ -87,13 +87,7 @@ export default {
     };
   },
 
-  methods: {
-    //logout functionality
-    logout() {
-      localStorage.clear();
-      this.$router.push({ path: "/" });
-    },
-  },
+ 
 };
 </script>
 

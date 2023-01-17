@@ -12,14 +12,15 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'login',
-    component: loginPage
-  },
-  {
-    path: '/home',
     name: 'home',
     component: HomeView
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: loginPage
+  },
+  
   {
     path: '/searchproduct/:search',
     name: 'searchproduct',

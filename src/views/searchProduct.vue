@@ -34,12 +34,7 @@
                   >Detail</router-link
                 >
               </button>
-              <button
-                class="btn btn-outline-success px-3"
-                style="margin-left: 10px"
-              >
-                Add to cart
-              </button>
+              
             </div>
           </div>
         </div>

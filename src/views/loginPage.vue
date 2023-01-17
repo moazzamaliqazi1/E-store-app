@@ -47,12 +47,7 @@
 <script>
 export default {
   name: "loginPage",
-  mounted() {
-    // when page load check user
-    this.onLoad();
-   
-    
-  },
+  
   data() {
     return {
       username: "",
@@ -80,7 +75,7 @@ export default {
       if (response.ok) {
         //save use in localstorage
         localStorage.setItem("user", JSON.stringify(data));
-        this.$router.push({ path: "/home" });
+        this.$router.push({ path: "/" });
 
         console.log("successful");
       } else {
@@ -88,13 +83,7 @@ export default {
         this.$swal.fire("Error!", "Invalid username or password!", "error");
       }
     },
-    onLoad() {
-      // check user in localstorage
-      const user = JSON.parse(localStorage.getItem("user"));
-      if (user && user.token) {
-        this.$router.push({ path: "/home" });
-      }
-    },
+   
     
   },
 };
