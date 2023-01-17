@@ -58,7 +58,8 @@
       >
         <i><i class="fa-solid fa-cart-shopping"></i></i>
       </button>
-      <div @click="$event.stopPropagation()">
+      <!-- cart component  -->
+      <div>
         <cart />
       </div>
     </div>

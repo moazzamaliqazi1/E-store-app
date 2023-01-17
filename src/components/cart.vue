@@ -12,25 +12,27 @@
       aria-labelledby="dropdownMenuButton1"
     >
       <h4 class="text-center mb-4">My Cart</h4>
-      <div v-for="item in carts" :key="item.id">
-        <div class="ml-5 d-flex justify-content-between">
-          <div>
-            <strong> {{ item.title }}</strong>
-            <br />Quantity: {{ item.quantity }} <br />Price: {{ item.price }}
+      <div @click="$event.stopPropagation()">
+        <div v-for="item in carts" :key="item.id">
+          <div class="ml-5 d-flex justify-content-between">
+            <div>
+              <strong> {{ item.title }}</strong>
+              <br />Quantity: {{ item.quantity }} <br />Price: {{ item.price }}
+            </div>
+            <div>
+              <a
+                href="#"
+                class="text-decoration-none text-danger"
+                @click="removeProductFromCart(item.id)"
+                ><i class="fa-solid fa-xmark"></i
+              ></a>
+            </div>
           </div>
-          <div>
-            <a href="#" class="text-decoration-none text-danger" @click="removeProductFromCart(item.id)"
-              ><i class="fa-solid fa-xmark"></i
-            ></a>
-          </div>
+          <hr />
         </div>
-        <hr />
       </div>
-      <div class="btn btn-success" @click="checkUser">
-      Checkout
+      <div class="btn btn-success" @click="checkUser">Checkout</div>
     </div>
-    </div>
-    
   </div>
 </template>
 
@@ -42,21 +44,20 @@ export default {
       return this.$store.state.carts;
     },
   },
-  methods:{
-    removeProductFromCart(product){
-      this.$store.dispatch("removeProductFromCart", product)
+  methods: {
+    removeProductFromCart(product) {
+      this.$store.dispatch("removeProductFromCart", product);
     },
-    checkUser(){
+    checkUser() {
       const user = JSON.parse(localStorage.getItem("user"));
-    console.log(user);
-    if (!user || !user.token) {
-      this.$router.push({ name: "login" });
-    }
-    else{
-      this.$swal.fire("success!", "checkout done", "success");
-    }
-    }
-  }
+      console.log(user);
+      if (!user || !user.token) {
+        this.$router.push({ name: "login" });
+      } else {
+        this.$swal.fire("success!", "checkout done", "success");
+      }
+    },
+  },
 };
 </script>
 
